@@ -2,6 +2,13 @@ import React from 'react';
 import { MapPin, Phone, Clock, Star, ChefHat, Timer, Users, ThumbsUp, UtensilsCrossed, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
+import heroImg from './assets/images/hero.jpg';
+import aboutImg from './assets/images/about.jpg';
+import noodlesImg from './assets/images/noodles.jpg';
+import kebabImg from './assets/images/kebab.jpg';
+import biryaniImg from './assets/images/biryani.jpg';
+import restaurantImg from './assets/images/restaurant.jpg';
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -66,7 +73,7 @@ function App() {
             initial={{ scale: 1.1, opacity: 0 }}
             animate={{ scale: 1, opacity: 0.4 }}
             transition={{ duration: 1.5 }}
-            src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&q=80&w=2070"
+            src={heroImg}
             alt="Delicious Chinese food assortment"
             className="w-full h-full object-cover mix-blend-overlay"
           />
@@ -138,7 +145,7 @@ function App() {
             >
               <div className="absolute -inset-4 bg-amber-100 rounded-[2rem] transform -rotate-3 transition-transform hover:rotate-0 duration-500"></div>
               <img 
-                src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&q=80&w=992" 
+                src={aboutImg} 
                 alt="Delicious Chowmein" 
                 className="relative rounded-[2rem] object-cover h-[550px] w-full shadow-2xl"
               />
@@ -193,46 +200,70 @@ function App() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Kebab */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Noodles */}
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
               className="group relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
             >
-              <div className="aspect-[4/3] lg:aspect-[16/10] w-full">
+              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
                 <img 
-                  src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&q=80&w=1000" 
+                  src={noodlesImg} 
+                  alt="Sizzling Noodles" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent flex flex-col justify-end p-8 sm:p-10">
+                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Crowd Pleaser</div>
+                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Sizzling Noodles</h3>
+                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Wok-tossed noodles with fresh vegetables, savory sauces, and aromatic spices for that perfect smoky flavor.</p>
+              </div>
+            </motion.div>
+
+            {/* Kebab */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="group relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
+            >
+              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
+                <img 
+                  src={kebabImg} 
                   alt="Authentic Kebab" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent flex flex-col justify-end p-8 sm:p-10">
                 <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Chef's Special</div>
-                <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-3 tracking-tight">Sizzling Kebabs</h3>
-                <p className="text-stone-300 text-lg font-light max-w-md mb-0 leading-relaxed">Tender, marinated meat grilled to absolute perfection with aromatic spices. Served hot with our signature mint chutney.</p>
+                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Sizzling Kebabs</h3>
+                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Tender, marinated meat grilled to absolute perfection with aromatic spices. Served hot with signature mint chutney.</p>
               </div>
             </motion.div>
 
             {/* Biryani */}
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
               className="group relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
             >
-              <div className="aspect-[4/3] lg:aspect-[16/10] w-full">
+              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
                 <img 
-                  src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=1000" 
+                  src={biryaniImg} 
                   alt="Authentic Dum Biryani" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent flex flex-col justify-end p-8 sm:p-10">
                 <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">House Favorite</div>
-                <h3 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-3 tracking-tight">Royal Dum Biryani</h3>
-                <p className="text-stone-300 text-lg font-light max-w-md mb-0 leading-relaxed">Fragrant long-grain basmati rice slow-cooked with tender meat, premium saffron, and rich traditional spices.</p>
+                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Royal Dum Biryani</h3>
+                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Fragrant long-grain basmati rice slow-cooked with tender meat, premium saffron, and rich traditional spices.</p>
               </div>
             </motion.div>
           </div>
@@ -430,7 +461,7 @@ function App() {
                className="relative h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group"
             >
               <img 
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1074" 
+                src={restaurantImg} 
                 alt="Restaurant interior"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
