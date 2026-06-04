@@ -3,10 +3,10 @@ import { MapPin, Phone, Clock, Star, ChefHat, Timer, Users, ThumbsUp, UtensilsCr
 import { motion } from 'motion/react';
 
 import heroImg from './assets/images/hero.jpg';
-import aboutImg from './assets/images/about.jpg';
-import noodlesImg from './assets/images/noodles.jpg';
-import kebabImg from './assets/images/kebab.jpg';
-import biryaniImg from './assets/images/biryani.jpg';
+import aboutImg from './assets/images/regenerated_image_1780584762559.png';
+import kebabImg from './assets/images/chicken_kabab.jpg';
+import biryaniImg from './assets/images/chicken_biryani.jpg';
+import rollImg from './assets/images/chicken_roll.jpg';
 import restaurantImg from './assets/images/restaurant.jpg';
 
 const fadeIn = {
@@ -47,8 +47,8 @@ function App() {
               className="hidden md:flex space-x-8"
             >
               <a href="#about" className="text-stone-600 hover:text-amber-700 font-medium transition-colors">About Us</a>
-              <a href="#specials" className="text-stone-600 hover:text-amber-700 font-medium transition-colors">Specials</a>
-              <a href="#features" className="text-stone-600 hover:text-amber-700 font-medium transition-colors">Why Us</a>
+              <a href="#specials" className="text-stone-600 hover:text-amber-700 font-medium transition-colors">Popular Dishes</a>
+              <a href="#features" className="text-stone-600 hover:text-amber-700 font-medium transition-colors">Why Us</a> 
               <a href="#reviews" className="text-stone-600 hover:text-amber-700 font-medium transition-colors">Reviews</a>
             </motion.div>
             <motion.div
@@ -170,8 +170,10 @@ function App() {
               </p>
               <div className="flex items-center gap-6 p-6 bg-stone-50 rounded-2xl border border-stone-100">
                  <div className="flex -space-x-4">
-                  {[1, 2, 3, 4].map((i) => (
-                    <img key={i} className="w-12 h-12 rounded-full border-4 border-stone-50 object-cover bg-stone-200" src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Customer Avatar" />
+                  {['A', 'B', 'M', 'S'].map((initial, i) => (
+                    <div key={i} className="w-12 h-12 rounded-full border-4 border-stone-50 bg-amber-600/10 text-amber-900 font-bold flex items-center justify-center">
+                      {initial}
+                    </div>
                   ))}
                  </div>
                  <div className="flex flex-col">
@@ -184,7 +186,7 @@ function App() {
         </div>
       </section>
 
-      {/* Signature Specials */}
+      {/* Popular Dishes */}
       <section id="specials" className="py-24 bg-stone-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -193,15 +195,15 @@ function App() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-20"
           >
-            <h2 className="font-serif text-5xl font-bold text-white mb-6">Signature Specials</h2>
+            <h2 className="font-serif text-5xl font-bold text-white mb-6">Popular Dishes</h2>
             <div className="w-24 h-1.5 bg-amber-600 rounded-full mx-auto mb-6"></div>
             <p className="text-xl text-stone-300 font-light">
               Experience the authentic flavors of our most loved and celebrated dishes.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Noodles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Chicken Kabab */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -209,21 +211,21 @@ function App() {
               transition={{ delay: 0.1 }}
               className="group relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
             >
-              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
+              <div className="aspect-[4/3] lg:aspect-[16/10] w-full">
                 <img 
-                  src={noodlesImg} 
-                  alt="Sizzling Noodles" 
+                  src={kebabImg} 
+                  alt="Chicken Kabab" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent flex flex-col justify-end p-8 sm:p-10">
-                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Crowd Pleaser</div>
-                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Sizzling Noodles</h3>
-                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Wok-tossed noodles with fresh vegetables, savory sauces, and aromatic spices for that perfect smoky flavor.</p>
+                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Must Try</div>
+                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Chicken Kabab</h3>
+                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Juicy grilled chicken marinated with authentic spices and served hot.</p>
               </div>
             </motion.div>
 
-            {/* Kebab */}
+            {/* Dum Biryani */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -231,21 +233,21 @@ function App() {
               transition={{ delay: 0.2 }}
               className="group relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
             >
-              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
+              <div className="aspect-[4/3] lg:aspect-[16/10] w-full">
                 <img 
-                  src={kebabImg} 
-                  alt="Authentic Kebab" 
+                  src={biryaniImg} 
+                  alt="Dum Biryani" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent flex flex-col justify-end p-8 sm:p-10">
-                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Chef's Special</div>
-                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Sizzling Kebabs</h3>
-                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Tender, marinated meat grilled to absolute perfection with aromatic spices. Served hot with signature mint chutney.</p>
+                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Must Try</div>
+                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Dum Biryani</h3>
+                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Aromatic basmati rice layered with rich spices and tender chicken.</p>
               </div>
             </motion.div>
 
-            {/* Biryani */}
+            {/* Chicken Roll */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -253,17 +255,17 @@ function App() {
               transition={{ delay: 0.3 }}
               className="group relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
             >
-              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
+              <div className="aspect-[4/3] lg:aspect-[16/10] w-full">
                 <img 
-                  src={biryaniImg} 
-                  alt="Authentic Dum Biryani" 
+                  src={rollImg} 
+                  alt="Chicken Roll" 
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent flex flex-col justify-end p-8 sm:p-10">
-                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">House Favorite</div>
-                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Royal Dum Biryani</h3>
-                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Fragrant long-grain basmati rice slow-cooked with tender meat, premium saffron, and rich traditional spices.</p>
+                <div className="inline-block px-4 py-1.5 bg-amber-600 text-white text-xs font-bold uppercase tracking-wider rounded-full self-start mb-4 shadow-lg">Must Try</div>
+                <h3 className="text-3xl font-serif font-bold text-white mb-3 tracking-tight">Chicken Roll</h3>
+                <p className="text-stone-300 text-lg font-light mb-0 leading-relaxed">Soft paratha wrapped around flavorful chicken filling.</p>
               </div>
             </motion.div>
           </div>
