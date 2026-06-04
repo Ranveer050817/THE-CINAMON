@@ -1,0 +1,8 @@
+{
+  "name": "The Cinnamon Restaurant",
+  "description": "Website for The Cinnamon Restaurant in Ranchi, offering delicious fast food and family dining.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
